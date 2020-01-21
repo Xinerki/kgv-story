@@ -40,11 +40,11 @@ function hudLoop()
 end
 
 function StopShowingHud(time)
-Citizen.CreateThread(function()
-	Citizen.CreateThread(hudLoop)
-	Wait(time or 5000)
-	showHudAgain = true
-end)
+	Citizen.CreateThread(function()
+		Citizen.CreateThread(hudLoop)
+		Wait(time or 5000)
+		showHudAgain = true
+	end)
 end
 
 function CheckIfPedsHaveSurvivors(pedTable)
