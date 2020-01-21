@@ -475,7 +475,7 @@ local function MainScript()
 			Wait(0)
 			DrawMarker(1, -462.0, -51.95, 44.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.3, 255, 255, 100, 150, false, false, false, true)
 			
-			if movedVehicle == false and GetDistanceBetweenCoords(-1403.35, -635.5, 27.85, GetEntityCoords(rumpo)) > 100.0 then
+			if movedVehicle == false and GetDistanceBetweenCoords(-462.0, -51.95, 44.7, GetEntityCoords(rumpo)) < 100.0 then
 				SetEntityCoords(lastVehicle, -471.3, -57.0, 43.8)
 				SetEntityRotation(lastVehicle, 0.0, 0.0, 87.75)
 				SetVehicleOnGroundProperly(lastVehicle)
@@ -598,6 +598,8 @@ local function MainScript()
 		------------------------------------------------------------------------------------------------------------------------------
 		--													GAMEPLAY END															--
 		------------------------------------------------------------------------------------------------------------------------------
+		
+		RemoveBlip(destinationBlip)
 		
 		for i,v in ipairs(spawnedPeds) do 
 			SetEntityAsNoLongerNeeded(v)
